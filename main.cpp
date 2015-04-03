@@ -50,8 +50,8 @@ uint64_t solve2(uint64_t n,int* primes,size_t* size){
 
 
 uint64_t solve2bis(uint64_t n,int* primes,size_t* size){
-  uint64_t res1 = (uint64_t) 0;
-  uint64_t lim1 = (uint64_t) (pow(n,1/3.)+1);
+  uint64_t res = (uint64_t) 0;
+  uint64_t lim = (uint64_t) (pow(n,1/3.)+1);
   for(int i=0;(i<*size && primes[i]<= lim);i++){
     double r = pow(n / (uint64_t) (primes[i]),1./3.);
     uint64_t quo = floor (r);
@@ -82,8 +82,8 @@ uint64_t solve3(uint64_t n){
 }
 
 int main(){
-  uint64_t n = (uint64_t) pow(10,9);
-  uint64_t sn = (uint64_t) pow(10,8);
+  uint64_t n = (uint64_t) pow(10,12);
+  uint64_t sn = (uint64_t) pow(10,9);
   size_t size;
   int* primes = (int*) primesieve_generate_primes ((uint64_t) 0, (uint64_t) sn, &size, INT_PRIMES);
   cerr << "prime generation done" << endl;
